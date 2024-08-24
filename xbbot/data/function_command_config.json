@@ -1,0 +1,18 @@
+{
+    "命令自定义": [
+        "function_command1"
+    ],
+    "签到功能": [
+        "qd",
+        "签到"
+    ],
+    "存签功能": [
+        "function_command3"
+    ],
+    "抽签功能": [
+        "function_command4"
+    ],
+    "图片功能": [
+        "function_command5"
+    ]
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左对齐的圆角半透明磨砂效果</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 设置全屏背景图片 */
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: url('纳西妲.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* 使容器纵向布局 */
+            align-items: flex-start;
+            padding-left: 5%; /* 添加左边距，使其更靠左 */
+            position: relative; /* 为页脚提供参考定位 */
+        }
+
+        /* 磨砂效果容器 */
+        .frosted-container {
+            width: 80%; /* 根据需求调整容器宽度 */
+            height: 90%; /* 根据需求调整容器高度 */
+            display: flex;
+            border-radius: 20px; /* 圆角效果 */
+            overflow: hidden;
+            margin-bottom: 50px; /* 留出空间以确保底部内容不被覆盖 */
+        }
+
+        /* 半透明磨砂覆盖层 */
+        .frosted-overlay {
+            width: 50%; /* 覆盖水平方向左半部分 */
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2); /* 更高透明度使图片更清晰 */
+            backdrop-filter: blur(4px); /* 减少模糊程度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left; /* 左对齐文字 */
+            padding: 20px; /* 添加内边距 */
+            box-sizing: border-box; /* 包括内边距和边框在内 */
+            border-top-left-radius: 20px; /* 圆角效果 */
+            border-bottom-left-radius: 20px; /* 圆角效果 */
+        }
+
+        /* 渐变文字效果 */
+        .overlay-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #87CEEB, #90EE90); /* 渐变从蓝色到绿色 */
+            -webkit-background-clip: text; /* 使渐变背景裁剪成文字形状 */
+            -webkit-text-fill-color: transparent; /* 使文字填充透明，从而显示背景渐变 */
+            margin: 0; /* 取消默认外边距 */
+        }
+
+        /* 列表项样式 */
+        .overlay-text li {
+            margin-bottom: 10px; /* 列表项之间的间距 */
+        }
+
+        /* 清晰显示的右半部分 */
+        .clear-section {
+            width: 50%; /* 占据右半部分 */
+            height: 100%;
+            border-top-right-radius: 20px; /* 圆角效果 */
+            border-bottom-right-radius: 20px; /* 圆角效果 */
+        }
+
+        /* 页脚样式 */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景色 */
+            color: white;
+            position: absolute;
+            bottom: 0;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 磨砂效果容器 -->
+    <div class="frosted-container">
+        <!-- 半透明磨砂覆盖层，文字左对齐显示 -->
+        <div class="frosted-overlay">
+            <ol class="overlay-text">
+                <li>姓名: [$ÿĀ]小白[$ÿĀ]</li>
+                <li>天数: 2</li>
+                <li>总积分: 28</li>
+                <li>获得积分: 14</li>
+            </ol>
+        </div>
+
+        <!-- 清晰的右半部分 -->
+        <div class="clear-section">
+            <!-- 右半部分显示原图的内容 -->
+        </div>
+    </div>
+
+    <!-- 页脚内容 -->
+    <div class="footer">
+        &copy由小白bot提供引擎渲染
+    </div>
+
+</body>
+</html>
